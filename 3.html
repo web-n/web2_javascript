@@ -4,39 +4,40 @@
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
   <script>
+  function LinksSetColor(color){
+    var alist = document.querySelectorAll('a');
+    var i = 0;
+    while(i < alist.length){
+      alist[i].style.color = color;
+      i = i + 1;
+    }
+  }
+  function BodySetColor(color){
+    document.querySelector('body').style.color = color;
+  }
+  function BodySetBackgroundColor(color){
+    document.querySelector('body').style.backgroundColor = color;
+  }
   function nightDayHandler(self){
     var target = document.querySelector('body');
     if(self.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
+      Body.setBackgroundColor('black');
+      Body.setColor('white');
       self.value = 'day';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
+      Links.setColor('powderblue');
     } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
+      Body.setBackgroundColor('white');
+      Body.setColor('black');
       self.value = 'night';
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
+      Links.setColor('blue');
     }
   }
   </script>
 </head>
 <body>
   <h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-    nightDayHandler(this);
-  ">
   <input id="night_day" type="button" value="night" onclick="
     nightDayHandler(this);
   ">

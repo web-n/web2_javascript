@@ -4,19 +4,23 @@
   <title>WEB1 - JavaScript</title>
   <meta charset="utf-8">
   <script>
-  function LinksSetColor(color){
-    var alist = document.querySelectorAll('a');
-    var i = 0;
-    while(i < alist.length){
-      alist[i].style.color = color;
-      i = i + 1;
+  var Links = {
+    setColor:function(color){
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while(i < alist.length){
+        alist[i].style.color = color;
+        i = i + 1;
+      }
     }
   }
-  function BodySetColor(color){
-    document.querySelector('body').style.color = color;
-  }
-  function BodySetBackgroundColor(color){
-    document.querySelector('body').style.backgroundColor = color;
+  var Body = {
+    setColor:function (color){
+      document.querySelector('body').style.color = color;
+    },
+    setBackgroundColor:function (color){
+      document.querySelector('body').style.backgroundColor = color;
+    }
   }
   function nightDayHandler(self){
     var target = document.querySelector('body');
@@ -50,6 +54,5 @@
   <p>
     JavaScript (/ˈdʒɑːvəˌskrɪpt/[6]), often abbreviated as JS, is a high-level, dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production. It is used to make webpages interactive and provide online programs, including video games. The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification, with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
   </p>
-
 </body>
 </html>
